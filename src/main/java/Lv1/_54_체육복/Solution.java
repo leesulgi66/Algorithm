@@ -24,51 +24,64 @@ package Lv1._54_체육복;
 //        예제 #2
 //        3번 학생이 2번 학생이나 4번 학생에게 체육복을 빌려주면 학생 4명이 체육수업을 들을 수 있습니다.
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 class Solution {
 
     public int solution(int n, int[] lost, int[] reserve) {
+        //진짜 너무너무 어렵다~~~~~~~~~~~
         int answer = 0;
 
         Arrays.sort(lost);
         Arrays.sort(reserve);
 
+        List<Integer> listLost = new ArrayList<>();
+        List<Integer> listReserve = new ArrayList<>();
+
+        //array 에서 list로 옮김
+        for(int i : lost) {
+            listLost.add(i);
+        }
+        for(int i : reserve) {
+            listReserve.add(i);
+        }
+
+        System.out.println("리스트 체크 : "+listLost);
+        System.out.println("리스트 체크 : "+listReserve);
+
+        //중복값 제거, 주의점 원본 list에 바로 삭제시 index위치가 달라져 완전히 제거 되지 않기 때문에 사본을 만든 후 사본에 삭제
         for(int i = 0; i < lost.length; i++) {
             for (int j = 0 ; j < reserve.length; j++) {
                 if(lost[i] == reserve[j]) {
-                    lost = removeElement(lost, lost[i]);
-                    reserve = removeElement(reserve, reserve[j]);
+                    listLost.remove(Integer.valueOf(lost[i]));
+                    listReserve.remove(Integer.valueOf(reserve[j]));
                 }
             }
         }
-        System.out.println(Arrays.toString(lost));
-        System.out.println(Arrays.toString(reserve));
 
-        for(int i = 0; i < lost.length; i++) {
-            for (int j = 0 ; j < reserve.length; j++) {
-                if(reserve[j] != 0 && lost[i] == (reserve[j]-1) || lost[i] == (reserve[j]+1)) {
-                    lost = removeElement(lost, lost[i]);
-                    reserve = removeElement(reserve, reserve[j]);
-                }
+        System.out.println("리스트 체크 : "+listLost);
+        System.out.println("리스트 체크 : "+listReserve);
+
+        for(int i : listReserve) {
+            if(listLost.contains(i - 1)) {
+                listLost.remove(Integer.valueOf(i-1));
+            }else if (listLost.contains(i + 1)) {
+                listLost.remove(Integer.valueOf(i+1));
             }
         }
-        //System.out.println(result);
-        answer = n-lost.length;
+
+        answer = n-listLost.size();
         return answer;
     }
 
-    public static int[] removeElement(int[] arr, int item) {
-        return Arrays.stream(arr)
-                .filter(i -> i != item)
-                .toArray();
-    }
 
     public static void main(String[] args) {
         Solution solution = new Solution();
-        int n = 9;
-        int[] lost = {5,6,8,1,2};
-        int[] reserve = {2,3,1,4,8,9 };
+        int n = 5;
+        int[] lost = {1,2,3};
+        int[] reserve = {2,4};
         System.out.println(solution.solution(n,lost,reserve));
     }
 }
