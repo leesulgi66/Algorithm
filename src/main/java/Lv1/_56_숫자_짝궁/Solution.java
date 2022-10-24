@@ -47,16 +47,19 @@ class Solution {
                 Long Xcount = X.chars().filter(c -> c == num).count();
                 //Y에 포함된 num의 갯수
                 Long Ycount = Y.chars().filter(c -> c == num).count();
+                // 교집합 중 작은 수만큼 answer에 추가
                 for(int j = 0; j < Math.min(Xcount, Ycount); j++) {
                     answer.append(num);
                 }
             }
         }
 
+        //추가 된 문자가 없으면 length = 0, -1을 반환
         if(answer.length() == 0) {
             return "-1";
         }
 
+        //문자를 순서대로 정렬
         String ans = answer.chars()        // IntStream
                 .sorted()
                 .collect(StringBuilder::new,
@@ -64,9 +67,11 @@ class Solution {
                         StringBuilder::append)
                 .toString();
 
+        //문자를 역순으로 재배열 <- 문자열 재배열 다른방식 찾아보기
         StringBuffer answerString = new StringBuffer(ans);
         String result = answerString.reverse().toString();
 
+        //만약 첫 문자가 0 이면 0을 반환
         if(result.charAt(0) == '0') {
             System.out.println(answer.charAt(0));
             return "0";
