@@ -12,6 +12,7 @@ package Lv2._01_최대값과_최소값;
 //        "1 2 3 4"	"1 4"
 //        "-1 -2 -3 -4"	"-4 -1"
 //        "-1 -1"	"-1 -1"
+//https://school.programmers.co.kr/learn/courses/30/lessons/12939
 
 import java.util.Arrays;
 
