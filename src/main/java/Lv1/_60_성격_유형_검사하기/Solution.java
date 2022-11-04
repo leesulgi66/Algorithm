@@ -160,12 +160,117 @@ package Lv1._60_성격_유형_검사하기;
 
 class Solution {
     public String solution(String[] survey, int[] choices) {
-        String answer = "";
-        return answer;
+        StringBuilder answer = new StringBuilder();
+        int R = 0;
+        int T = 0;
+
+        int C = 0;
+        int F = 0;
+
+        int J = 0;
+        int M = 0;
+
+        int A = 0;
+        int N = 0;
+
+
+        for(int i = 0 ; i < survey.length; i++) {
+            if(survey[i].equals("RT")){
+                if(choices[i] > 4) {
+                    T += choices[i] - 4;
+                } else if(choices[i] < 4) {
+                    R += 4 - choices[i];
+                }
+
+            } else if (survey[i].equals("TR")) {
+                if(choices[i] > 4) {
+                    R += choices[i] - 4;
+                } else if(choices[i] < 4) {
+                    T += 4 - choices[i];
+                }
+
+            } else if (survey[i].equals("FC")) {
+                if(choices[i] > 4) {
+                    C += choices[i] - 4;
+                } else if(choices[i] < 4) {
+                    F += 4 - choices[i];
+                }
+
+            } else if (survey[i].equals("CF")) {
+                if(choices[i] > 4) {
+                    F += choices[i] - 4;
+                } else if(choices[i] < 4) {
+                    C += 4 - choices[i];
+                }
+
+            } else if (survey[i].equals("MJ")) {
+                if(choices[i] > 4) {
+                    J += choices[i] - 4;
+                } else if(choices[i] < 4) {
+                    M += 4 - choices[i];
+                }
+
+            } else if (survey[i].equals("JM")) {
+                if(choices[i] > 4) {
+                    M += choices[i] - 4;
+                } else if(choices[i] < 4) {
+                    J += 4 - choices[i];
+                }
+
+            } else if (survey[i].equals("AN")) {
+                if(choices[i] > 4) {
+                    N += choices[i] - 4;
+                } else if(choices[i] < 4) {
+                    A += 4 - choices[i];
+                }
+
+            } else if (survey[i].equals("NA")) {
+                if(choices[i] > 4) {
+                    A += choices[i] - 4;
+                } else if(choices[i] < 4) {
+                    N += 4 - choices[i];
+                }
+
+            }
+        }
+
+        System.out.println("R : "+R);
+        System.out.println("T : "+T);
+        System.out.println("C : "+C);
+        System.out.println("F : "+F);
+        System.out.println("M : "+M);
+        System.out.println("J : "+J);
+        System.out.println("A : "+A);
+        System.out.println("N : "+N);
+
+        if(R >= T) {
+            answer.append('R');
+        }else{
+            answer.append('T');
+        }
+        if(C >= F) {
+            answer.append('C');
+        }else{
+            answer.append('F');
+        }
+        if(J >= M) {
+            answer.append('J');
+        }else{
+            answer.append('M');
+        }
+        if(A >= N) {
+            answer.append('A');
+        }else{
+            answer.append('N');
+        }
+
+
+        return answer.toString();
     }
 
     public static void main(String[] args) {
         Solution s = new Solution();
         System.out.println(s.solution(new String[] {"AN", "CF", "MJ", "RT", "NA"}, new int[] {5, 3, 2, 7, 5}));
+        System.out.println(s.solution(new String[] {"TR", "RT", "TR"}, new int[] {7, 1, 3}));
     }
 }
