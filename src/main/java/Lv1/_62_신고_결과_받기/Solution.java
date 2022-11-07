@@ -66,6 +66,8 @@ package Lv1._62_신고_결과_받기;
 //
 //        제한시간 안내
 //        정확성 테스트 : 10초
+// ArrayList 2차원 배열 참고 : https://coding-plant.tistory.com/126
+// List를 Set으로 참고 : https://hianna.tistory.com/555
 
 import java.util.*;
 
