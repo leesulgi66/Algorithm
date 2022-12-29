@@ -44,10 +44,11 @@ face에 해당하는 의상이 crow_mask, blue_sunglasses, smoky_makeup이므로
  */
 
 import java.util.HashMap;
-import java.util.Iterator;
+import java.util.Map;
 
 class Solution2 {
     public int solution(String[][] clothes) {
+        int answer = 1;
         // 1. 옷을 종류별로 구분하기
         HashMap<String, Integer> map = new HashMap<>();
         for (String[] clothe : clothes) {
@@ -56,11 +57,13 @@ class Solution2 {
         }
 
         // 2. 입지 않는 경우를 추가하여 모든 조합 계산하기
-        Iterator<Integer> it = map.values().iterator();
-        int answer = 1;
-
-        while(it.hasNext())
-            answer *= it.next().intValue() + 1;
+        for(Map.Entry<String, Integer> e : map.entrySet()){
+            String key = e.getKey();
+            Integer value = e.getValue();
+            //ystem.out.println("key : "+key);
+            //System.out.println("value : "+value);
+            answer *= value +1;
+        }
 
         // 3. 아무종류의 옷도 입지 않는 경우 제외하기
         return answer - 1;
