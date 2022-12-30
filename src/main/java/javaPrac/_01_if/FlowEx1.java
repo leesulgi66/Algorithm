@@ -1,4 +1,4 @@
-package javaPrac._if;
+package javaPrac._01_if;
 
 public class FlowEx1 {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package javaPrac._if;
+package javaPrac._01_if;
 
 import java.util.Scanner;
 
