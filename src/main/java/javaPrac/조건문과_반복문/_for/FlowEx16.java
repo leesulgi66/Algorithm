@@ -1,4 +1,4 @@
-package javaPrac._for;
+package javaPrac.조건문과_반복문._for;
 
 public class FlowEx16 {
     public static void main(String[] args) {

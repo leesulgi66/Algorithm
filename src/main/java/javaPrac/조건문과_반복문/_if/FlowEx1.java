@@ -1,4 +1,4 @@
-package javaPrac._01_if;
+package javaPrac.조건문과_반복문._if;
 
 public class FlowEx1 {
     public static void main(String[] args) {
