@@ -9,7 +9,7 @@ public class ArrayEx10 {
         }
         System.out.println();
 
-        for(int i=0; i<numArr.length; i++) {
+        for(int i=0; i<numArr.length-1; i++) {
             boolean changed = false;  // 자리바꿈이 발생했는지를 체크한다.
 
             for(int j=0; j<numArr.length-1-i; j++) {
