@@ -1,6 +1,6 @@
 package javaPrac.array.multi_dimensional;
 
-public class MutiArrEx3 {
+public class MultiArrEx3 {
     public static void main(String[] args) {
         int[][] m1 = {
                 {1, 2, 3},
