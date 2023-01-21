@@ -1,6 +1,6 @@
 package javaPrac.object_oriented_programming.tv_test3;
 
-import javaPrac.object_oriented_programming.Tv;
+import javaPrac.object_oriented_programming.tv_test.Tv;
 
 public class TvTest3 {
     public static void main(String[] args) {

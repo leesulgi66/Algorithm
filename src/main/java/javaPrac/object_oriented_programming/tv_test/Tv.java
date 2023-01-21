@@ -1,4 +1,4 @@
-package javaPrac.object_oriented_programming;
+package javaPrac.object_oriented_programming.tv_test;
 
 public class Tv {
     // Tv의 속성 (맴버변수)
