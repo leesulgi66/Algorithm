@@ -1,4 +1,4 @@
-package javaPrac.ch07_object_oriented_programming2.inheritance;
+package javaPrac.ch07_object_oriented_programming2._01_inheritance;
 
 class Tv {
     boolean power;  // 전원상태(on/off)
