@@ -1,4 +1,4 @@
-package javaPrac.ch07_object_oriented_programming2._02_overriding;
+package javaPrac.ch07_object_oriented_programming2._02_overriding.point_test;
 
 public class PointTest {
     public static void main(String[] args) {
