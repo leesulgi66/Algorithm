@@ -8,6 +8,8 @@ class Product {
         this.price = price;
         bonusPoint = (int)(price/10.0); // 보너스점수는 제품가격의 10%
     }
+
+    Product() {};
 }
 
 class Tv extends Product {
