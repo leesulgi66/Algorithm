@@ -24,7 +24,7 @@ public class InnerEx3 {
             int liv2 = outerCv;
 
             // 외부 클래스의 지역변수는 final이 붙은 변수(상수)만 접근 가능하다.
-            int liv3 = lv;  //<--- 원래는 에러이지만 JDK1.8부터는 허용됨.
+            int liv3 = lv;  //<--- 원래는 에러이지만 JDK1.8부터는 허용됨.(컴파일러가 편의상 자동으로 final을 붙여주기 때문! 상수를 바뀌는 변수값이 있을 경우 에러가 난다.)
             int liv4 = Lv;
         }
     }
