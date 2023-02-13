@@ -1,6 +1,6 @@
 package javaPrac.ch08_exceptino_handling;
 
-public class Exception9 {
+public class ExceptionEx9 {
     public static void main(String[] args) {
         try {
             Exception e = new Exception("고의로 발생시켰음.");
