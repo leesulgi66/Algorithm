@@ -11,6 +11,6 @@ public class HashCodeEx1 {
         System.out.println(System.identityHashCode(str1));
         System.out.println(System.identityHashCode(str2));
 
-        // 서로 다른 객체지만 해시코드는 같다.
+        // 서로 다른 객체지만 해시코드는 같다
     }
 }
