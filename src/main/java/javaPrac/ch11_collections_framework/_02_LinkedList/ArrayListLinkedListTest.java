@@ -1,4 +1,4 @@
-package javaPrac.ch11_collections_framework._01_ArrayList;
+package javaPrac.ch11_collections_framework._02_LinkedList;
 
 import java.util.*;
 
