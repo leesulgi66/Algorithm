@@ -44,7 +44,11 @@ public class MyVector2 extends MyVector implements Iterator {
     public void remove() {
         // 더이상 삭제할 것이 없으면 IllegalStateException를 발생시킨다.
         if(lastRet==-1) {
-//            throw new IllegalAccessException();
+            try {
+                throw new IllegalAccessException();
+            } catch (IllegalAccessException e) {
+                throw new RuntimeException(e);
+            }
         }else {
             remove(lastRet);
             cursor--;       // 삭제 후에 cursor의 위치를 감소시킨다.
