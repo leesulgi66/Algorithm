@@ -6,11 +6,11 @@ import java.util.*;
 public class MyVector2 extends MyVector implements Iterator {
     int cursor = 0;
     int lastRet = -1;
-    public MyVector2(int capacity) {
+    public MyVector2(int capacity) throws IllegalAccessException {
         super(capacity);
     }
 
-    public MyVector2() {
+    public MyVector2() throws IllegalAccessException {
         this(10);
     }
 
