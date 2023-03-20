@@ -24,13 +24,6 @@ public class MyVector implements List {
             setCapacity(minCapacity);
     }
 
-    public boolean add(Objects obj) {
-        // 새로운 객체를 저장하기 전에 저장할 공간을 확보한다.
-        ensureCapacity(size + 1);
-        data[size++] = obj;
-        return true;
-    }
-
     public Object get(int index) {
         if(index < 0 || index >= size)
             throw new IndexOutOfBoundsException("범위를 벗어났습니다.");
@@ -90,6 +83,14 @@ public class MyVector implements List {
         return result;
     }
 
+    @Override
+    public boolean add(Object o) {
+        // 새로운 객체를 저장하기 전에 저장할 공간을 확보한다.
+        ensureCapacity(size + 1);
+        data[size++] = o;
+        return true;
+    }
+
     public boolean isEmpty(){ return size == 0;}
     public int capacity() { return capacity;}
     public int size() { return size;}
@@ -102,7 +103,7 @@ public class MyVector implements List {
     public Iterator iterator() { return null; }
 //    public Object[] toArray();
     public Object[] toArray(Object a[]) { return null; }
-    public boolean add(Object o) { return false; };
+//    public boolean add(Object o) { return false; };
 //    public boolean remove(Object o);
     public boolean containsAll(Collection c) { return false; }
     public boolean addAll(Collection c) { return false; }
