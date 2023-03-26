@@ -61,4 +61,5 @@ class Solution {
         Solution s = new Solution();
         System.out.println(s.solution(new String[]{"i", "drink", "water"}, new String[]{"want", "to"}, new String[]{"i", "want", "to", "drink", "water"}));
     }
+    // 투포인터 알고리즘
 }
