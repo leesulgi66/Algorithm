@@ -31,8 +31,23 @@ import java.util.Arrays;
 
 class Solution {
     public String solution(String s, String skip, int index) {
+        StringBuilder answer = new StringBuilder();
+        StringBuilder alphabet = new StringBuilder("abcdefghijklmnopqrstuvwxyz");
+        for(String i : skip.split("")) {
+            int delnum = alphabet.indexOf(i);
+            alphabet.deleteCharAt(delnum);
+        }
 
-        return "";
+        for(String i : s.split("")) {
+            int indexNum = alphabet.indexOf(i);
+            indexNum += index;
+            if(indexNum >= alphabet.length()) {
+                indexNum %= alphabet.length();
+            }
+            answer.append(alphabet.charAt(indexNum));
+        }
+
+        return answer.toString();
     }
 
     public static void main(String[] args) {
