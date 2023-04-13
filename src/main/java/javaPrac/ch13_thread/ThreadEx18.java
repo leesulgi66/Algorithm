@@ -1,6 +1,6 @@
 package javaPrac.ch13_thread;
 
-public class TreadEx18 {
+public class ThreadEx18 {
     public static void main(String[] args) {
         ThreadEx18_1 th1 = new ThreadEx18_1("*");
         ThreadEx18_1 th2 = new ThreadEx18_1("**");
