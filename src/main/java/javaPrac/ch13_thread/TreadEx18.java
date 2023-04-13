@@ -42,7 +42,7 @@ class ThreadEx18_1 implements Runnable {
             if(!suspended) {
                 System.out.println(name);
                 try {
-                    Thread.sleep(1000);
+                    Thread.sleep(1000);     // interrupt()가 호출되면, 1초를 낭비하지 않고 바로 예외가 발생된다.
                 }catch (InterruptedException e) {
                     System.out.println(name+ " - interrupted");
                 }
