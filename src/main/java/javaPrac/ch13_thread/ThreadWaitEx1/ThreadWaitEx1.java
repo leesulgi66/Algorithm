@@ -1,4 +1,4 @@
-package javaPrac.ch13_thread;
+package javaPrac.ch13_thread.ThreadWaitEx1;
 
 import java.util.ArrayList;
 
