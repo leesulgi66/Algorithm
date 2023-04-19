@@ -1,4 +1,4 @@
-package javaPrac.ch14_lambda_and_stream.lambda.MyFunctionEx1;
+package javaPrac.ch14_lambda_and_stream.lambda.LambdaEx1;
 
 @FunctionalInterface
 interface MyFunction {
