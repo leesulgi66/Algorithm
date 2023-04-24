@@ -61,14 +61,83 @@ class Solution {
     public int[] solution(String[] park, String[] routes) {
         int[] answer = {0, 0};
 
+        // 시작 포인트
+        for(int i=0; i<park.length; i++) {
+            if(park[i].contains("S")) {
+                answer[0] = i;  // SN
+                answer[1] = park[i].indexOf("S");   // EW
+                break;
+            }
+        }
+
+        for(String s : routes) {
+            if(s.charAt(0)=='E') {
+                char numCha = s.charAt(2);
+                int num = Character.getNumericValue(numCha);
+                if(answer[1] + num < park[answer[0]].length()) {
+                    String tmp = park[answer[0]].substring(answer[1], answer[1]+num+1);
+                    if(!tmp.contains("X")) {
+                        answer[1] += num;
+                    }
+                }
+            }else if (s.charAt(0)=='W') {
+                char numCha = s.charAt(2);
+                int num = Character.getNumericValue(numCha);
+                if(answer[1] - num >= 0) {
+                    String tmp = park[answer[0]].substring(answer[1]-num, answer[1]);
+                    if(!tmp.contains("X")) {
+                        answer[1] -= num;
+                    }
+                }
+            }else if (s.charAt(0)=='S') {
+                char numCha = s.charAt(2);
+                int num = Character.getNumericValue(numCha);
+                int minNum = answer[0];
+                int maxNum = answer[0]+num;
+                if(answer[0] + num < park[answer[0]].length()) {
+                    if(checkY(minNum, maxNum, park, answer[1]))
+                        answer[0] += num;
+                }
+            }else if (s.charAt(0)=='N') {
+                char numCha = s.charAt(2);
+                int num = Character.getNumericValue(numCha);
+                int minNum = answer[0]-num;
+                int maxNum = answer[0];
+                if(answer[0] - num >= 0) {
+                    if(checkY(minNum, maxNum, park, answer[1]))
+                        answer[0] -= num;
+                }
+            }
+        }
+
         return answer;
     }
 
+    boolean checkY (int min, int max, String[] park, int y) {
+        for(int i=min; i<=max; i++) {
+            if(park[i].charAt(y)=='X') {
+                return false;
+            }
+        }
+        return true;
+    }
 
     public static void main(String[] args) {
         Solution s = new Solution();
         System.out.println(Arrays.toString(s.solution(new String[] {"SOO","OOO","OOO"}, new String[] {"E 2","S 2","W 1"})));
         System.out.println(Arrays.toString(s.solution(new String[] {"SOO","OXX","OOO"}, new String[] {"E 2","S 2","W 1"})));
         System.out.println(Arrays.toString(s.solution(new String[] {"OSO","OOO","OXO","OOO"}, new String[] {"E 2","S 3","W 1"})));
+        System.out.println(Arrays.toString(s.solution(new String[] {"XOXO","OOOO","XSOO","XXOO"}, new String[] {"W 1"})));
+        System.out.println();
+        System.out.println(Arrays.toString(s.solution(new String[] {"XXX","XSX","XXX"}, new String[] {"E 1"})));
+        System.out.println(Arrays.toString(s.solution(new String[] {"XXX","XSX","XXX"}, new String[] {"W 1"})));
+        System.out.println(Arrays.toString(s.solution(new String[] {"XXX","XSX","XXX"}, new String[] {"N 1"})));
+        System.out.println(Arrays.toString(s.solution(new String[] {"XXX","XSX","XXX"}, new String[] {"S 1"})));
+        System.out.println();
+        System.out.println(Arrays.toString(s.solution(new String[] {"OOO","OSO","OOO"}, new String[] {"E 1"})));
+        System.out.println(Arrays.toString(s.solution(new String[] {"OOO","OSO","OOO"}, new String[] {"W 1"})));
+        System.out.println(Arrays.toString(s.solution(new String[] {"OOO","OSO","OOO"}, new String[] {"N 1"})));
+        System.out.println(Arrays.toString(s.solution(new String[] {"OOO","OSO","OOO"}, new String[] {"S 1"})));
+
     }
 }
