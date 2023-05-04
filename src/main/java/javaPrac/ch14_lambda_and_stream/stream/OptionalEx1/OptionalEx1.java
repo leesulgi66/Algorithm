@@ -6,7 +6,8 @@ import java.util.OptionalInt;
 public class OptionalEx1 {
     public static void main(String[] args) {
         Optional<String> optStr = Optional.of("abcde");
-        Optional<Integer> optInt = optStr.map(String::length);
+//        Optional<Integer> optInt = optStr.map(String::length);
+        Optional<Integer> optInt = optStr.map((s) -> s.length());   // 람다식으로 변환해보기
         System.out.println("optStr = "+optStr.get());
         System.out.println("optInt = "+optInt.get());
 
@@ -24,8 +25,8 @@ public class OptionalEx1 {
         Optional.of("456").map(Integer::parseInt)
                 .ifPresent(x->System.out.printf("result3 = %d%n", x));
 
-        OptionalInt optInt1 = OptionalInt.of(0);    // 0을 저장
-        OptionalInt optInt2 = OptionalInt.empty();        // 빈 객체를 생성
+        OptionalInt optInt1 = OptionalInt.of(0);    // 0을 저장 isPresent:true
+        OptionalInt optInt2 = OptionalInt.empty();        // 빈 객체를 생성 isPresent:false
 
         System.out.println(optInt1.isPresent());    // ture
         System.out.println(optInt2.isPresent());    // false
@@ -34,7 +35,7 @@ public class OptionalEx1 {
 //        System.out.println(optInt2.getAsInt());     // NoSuchElementException
         System.out.println("optInt1 = "+optInt1);
         System.out.println("optInt2 = "+optInt2);
-        System.out.println("optInt1.equals(optInt2) ? "+optInt1.equals(optInt2));
+        System.out.println("optInt1.equals(optInt2) ? "+optInt1.equals(optInt2));   // false
 
         Optional<String> opt = Optional.ofNullable(null);   // null을 저장
         Optional<String> opt2 = Optional.empty();                // 빈 객체를 생성
