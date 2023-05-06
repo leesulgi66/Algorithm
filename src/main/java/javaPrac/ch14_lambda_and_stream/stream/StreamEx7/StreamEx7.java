@@ -1,7 +1,6 @@
 package javaPrac.ch14_lambda_and_stream.stream.StreamEx7;
 
 import java.util.*;
-import java.util.function.*;
 import java.util.stream.Stream;
 import static java.util.stream.Collectors.*;
 import static java.util.Comparator.*;
