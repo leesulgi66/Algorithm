@@ -1,4 +1,4 @@
-package Algorithm.알고리즘_코딩테스트_문제풀이_강의_1_숫자의_합_구하기;
+package Algorithm._01_알고리즘_코딩테스트_문제풀이_강의_1_숫자의_합_구하기;
 
 import java.util.Scanner;
 
