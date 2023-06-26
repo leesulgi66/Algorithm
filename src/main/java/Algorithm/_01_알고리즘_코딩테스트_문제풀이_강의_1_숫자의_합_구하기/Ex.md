@@ -24,10 +24,10 @@
 <td>여기2     </td>
 </tr>
 <tr>
-<td>여기1-2     </td>
+<td>여기12     </td>
 </tr>
 <tr>
-<td>여기1-3     </td>
+<td>여기13     </td>
 </tr>
 </tbody>
       </table>
