@@ -26,7 +26,7 @@ public class BFS {
         BFS(1);
 
         System.out.println(Arrays.toString(visited)); // 방문 배열 모두 방문 했는가
-        System.out.println(order);  // 탐색 순서.
+        System.out.println(order);  // 탐색 순서. [1, 2, 3, 5, 6, 4]
 
     }
 
