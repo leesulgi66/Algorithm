@@ -54,6 +54,6 @@ class Solution {
 
     public static void main(String[] args) {
         Solution s = new Solution();
-        System.out.println(s.solution(new int[] {1, 1, 1, 1, 1}, 3));
+        System.out.println(s.solution(new int[] {1, 1, 1, 1, 1}, 3)); // 5
     }
 }
