@@ -6,7 +6,6 @@ function solution(targets) {
 
     for(let i=1; i<targets.length; i++) {
         if(targets[i][1] <= num) {
-            console.log("checkmate");
             num = targets[i][0];
             answer++;
         }
