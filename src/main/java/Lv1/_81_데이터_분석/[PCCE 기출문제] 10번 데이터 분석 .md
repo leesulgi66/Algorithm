@@ -1,4 +1,4 @@
-# [PCCE 기출문제] 9번 / 이웃한 칸
+# [PCCE 기출문제] 10번 / 데이터 분석
 
 [문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/250121)
 
